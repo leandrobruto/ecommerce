@@ -8,6 +8,14 @@ export const Container = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 
+    a {
+        transition: filter 0.2s;
+
+        &:hover {
+            filter: brightness(0.9);
+        }
+    }
+
     button {
         padding: 0 0.5rem;
         width: 100px;
@@ -20,6 +28,7 @@ export const Container = styled.div`
         font-weight: 400;
 
         a {
+            color: #fff;
             text-decoration: none;
             font-size: 1rem;
             padding-right: 1rem;

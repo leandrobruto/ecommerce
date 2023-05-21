@@ -13,8 +13,10 @@ export function Header() {
                     <img src="" alt="e-commerce" />
                 </Link>
                 <Link to="/shoppingcart" >
+                    <div>
                     <strong>{cart.products.length}</strong>
                     <FaShoppingCart className="appShoppingCart" />
+                    </div>
                 </Link>
             </Content>
         </Container>

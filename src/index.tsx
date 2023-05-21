@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Dashboard } from './components/Dashboard';
 import { ProductDetails } from './pages/ProductDetails';
 import { CategoryDetails } from './pages/CategoryDetails';
-import ErrorPage from './components/ErrorPage';
+import ErrorPage from './pages/ErrorPage';
 import { CartProducts } from './pages/CartProducts';
 import { CartProvider } from './hooks/useCart';
 import { ProductsProvider } from './hooks/useProducts';

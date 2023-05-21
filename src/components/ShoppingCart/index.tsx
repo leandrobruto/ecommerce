@@ -83,36 +83,35 @@ export function ShoppingCart({products}: ProductsCartProps) {
                 </tbody>
             </table>
             
-
             {isEmpty ? (<h5>Empty cart</h5>) : (
                 <div>
                     <div>
                         <strong>Total</strong>
+                        <strong>{new Intl.NumberFormat('pt-BR', {
+                            style: 'currency',
+                            currency: 'BRL'
+                        }).format(amountCart)}
+                        </strong>
                     </div>
-                    <strong>{new Intl.NumberFormat('pt-BR', {
-                        style: 'currency',
-                        currency: 'BRL'
-                    }).format(amountCart)}
-                    </strong>
                     <div>
-                    <Link to="/shoppingcart" >
-                        <button onClick={handleClearCart} className="clearCartButton">
+                        <Link to="/shoppingcart" >
+                            <button onClick={handleClearCart} className="clearCartButton">
+                                <div>
+                                    <p>Clear cart</p>
+                                    <span>
+                                        <FaTrashAlt className="appShoppingCart" />
+                                    </span>
+                                </div>
+                            </button>    
+                        </Link>
+                        <button onClick={handleConfirmCart}>
                             <div>
-                                <p>Clear cart</p>
+                                <p>Confirm buy</p>
                                 <span>
-                                    <FaTrashAlt className="appShoppingCart" />
+                                    <FaCheck className="appShoppingCart" />
                                 </span>
                             </div>
-                        </button>    
-                    </Link>
-                    <button onClick={handleConfirmCart}>
-                        <div>
-                            <p>Confirm buy</p>
-                            <span>
-                                <FaCheck className="appShoppingCart" />
-                            </span>
-                        </div>
-                    </button>
+                        </button>
                     </div>
                 </div>
             )}

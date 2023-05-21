@@ -21,6 +21,7 @@ export const Container = styled.div`
 
         
         a {
+            color: #fff;
             text-decoration: none;
             font-size: 1rem;
             padding-right: 1rem;

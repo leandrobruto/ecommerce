@@ -15,12 +15,11 @@ export const Content = styled.div`
 
     a {
 
-        color: var(--text-title);
+        color: powderblue;
         text-decoration: none;
     }
 
     .appShoppingCart {
-        display: flex;
         color: powderblue;
 
         transition: filter 0.2s;
