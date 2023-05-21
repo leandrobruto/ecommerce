@@ -1,19 +1,54 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { App } from './App';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Dashboard } from './components/Dashboard';
+import { ProductDetails } from './pages/ProductDetails';
+import { CategoryDetails } from './pages/CategoryDetails';
+import ErrorPage from './components/ErrorPage';
+import { CartProducts } from './pages/CartProducts';
+import { CartProvider } from './hooks/useCart';
+import { ProductsProvider } from './hooks/useProducts';
+import SuccessPage from './pages/SuccessPage';
+import { CategoriesProvider } from './hooks/useCategories';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Dashboard />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/products/:productId",
+    element: <ProductDetails />,
+  },
+  {
+    path: "/category/:categorySlug",
+    element: <CategoryDetails />,
+  },
+  {
+    path: "/shoppingchart",
+    element: <CartProducts />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/success",
+    element: <SuccessPage />,
+    errorElement: <ErrorPage />,
+  },
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <CartProvider>
+      <CategoriesProvider>
+        <ProductsProvider>
+          <RouterProvider router={router} />
+        </ProductsProvider>
+      </CategoriesProvider>
+    </CartProvider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
