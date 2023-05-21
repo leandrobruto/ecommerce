@@ -4,6 +4,7 @@ import { Container } from "./styles";
 import { api } from "../../services/api";
 import { Link } from "react-router-dom";
 import { Layout } from "../../layouts/default";
+import { FaArrowLeft } from 'react-icons/fa';
 import { ProductInfo } from "../../components/ProductInfo";
 
 interface ProductProps {
@@ -28,7 +29,10 @@ export function ProductDetails() {
         <Layout>
             <Container>
                 { product && <ProductInfo product={product} />}
-                <Link to="/">Back</Link>
+                <button>
+                    <Link to="/">Back</Link>
+                    <FaArrowLeft />
+                </button>
             </Container>
         </Layout>
     );

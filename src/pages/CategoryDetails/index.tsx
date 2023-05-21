@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import { Container } from "./styles";
-import { api } from "../../services/api";
 import { Link } from "react-router-dom";
 import { Layout } from "../../layouts/default";
-
+import { FaArrowLeft } from 'react-icons/fa';
 import { useProducts } from "../../hooks/useProducts";
 import { CategoryInfo } from "../../components/CategoryInfo";
 
@@ -23,7 +22,10 @@ export function CategoryDetails() {
         <Layout>
             <Container>
                 <CategoryInfo />
-                <Link to="/">Back</Link>
+                <button>
+                    <Link to="/">Back</Link>
+                    <FaArrowLeft />
+                </button>
             </Container>
         </Layout>
     );

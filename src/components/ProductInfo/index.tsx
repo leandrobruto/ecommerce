@@ -1,5 +1,5 @@
 import { useCart } from "../../hooks/useCart";
-
+import { FaShoppingCart } from 'react-icons/fa';
 import imgDefault from "../../assets/imgDefault.jpeg"
 import { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -47,7 +47,10 @@ export function ProductInfo({product}: ProductInfoProps) {
             <h4>{product?.category}</h4>
             <input type="number" ref={inputRef} name="quantity" min="1"></input>
             <div>
-                <button onClick={handleAddToCart}>Add to cart</button>
+                <button onClick={handleAddToCart}>
+                    Add to cart
+                    <FaShoppingCart />
+                </button>
             </div>
         </div>
     );

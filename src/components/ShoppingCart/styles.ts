@@ -37,6 +37,25 @@ export const Container = styled.div`
                 color: var(--text-title);
             } 
         }
+
+        tr {
+            button {
+                padding: 0 0.5rem;
+                height: 2rem;
+                background: var(--red);
+                color: #fff;
+                border-radius: 0.25rem;
+                border: 0;
+                font-size: 1rem;
+                font-weight: 400;
+
+                transition: filter 0.2s;
+
+                &:hover {
+                    filter: brightness(0.9);
+                }
+            }
+        }
     }
 
     div {
