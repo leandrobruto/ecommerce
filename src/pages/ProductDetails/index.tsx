@@ -21,11 +21,6 @@ export function ProductDetails() {
     useEffect(() => {
         api.get(`/products/${productId}`)
             .then(response => setProduct(response.data));
-        
-        // handleCategory('electronics');
-        // return () => {
-        //     handleCategory('');
-        //   };
     }, []);
 
     

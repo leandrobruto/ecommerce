@@ -13,9 +13,9 @@ export function Header() {
                 <Link to="/" >
                     <img src="" alt="e-commerce" />
                 </Link>
-                <Link to="/shoppingchart" >
+                <Link to="/shoppingcart" >
                     <strong>{cart.products.length}</strong>
-                    <FaShoppingCart className="appShoppingChart" />
+                    <FaShoppingCart className="appShoppingCart" />
                 </Link>
             </Content>
         </Container>

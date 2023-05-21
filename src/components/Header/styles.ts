@@ -19,7 +19,7 @@ export const Content = styled.div`
         text-decoration: none;
     }
 
-    .appShoppingChart {
+    .appShoppingCart {
         display: flex;
         color: powderblue;
 

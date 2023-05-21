@@ -1,6 +1,7 @@
 import { Container } from "./styles";
 import { Link } from "react-router-dom";
 import { FaTrashAlt } from 'react-icons/fa';
+import { FaCheck } from 'react-icons/fa';
 import { useCart } from "../../hooks/useCart";
 import { useNavigate } from "react-router-dom";
 
@@ -74,7 +75,7 @@ export function ShoppingCart({products}: ProductsCartProps) {
                             </td>
                             <td>
                             <button onClick={() => handleRemoveFromCart(product)}>
-                                <FaTrashAlt className="appShoppingChart" />
+                                <FaTrashAlt className="appShoppingCart" />
                             </button>   
                             </td>
                         </tr>
@@ -93,14 +94,26 @@ export function ShoppingCart({products}: ProductsCartProps) {
                         currency: 'BRL'
                     }).format(amountCart)}
                     </strong>
-                    <Link to="/shoppingchart" >
-                        <button onClick={handleClearCart}>
-                            Clear cart<FaTrashAlt className="appShoppingChart" />
+                    <div>
+                    <Link to="/shoppingcart" >
+                        <button onClick={handleClearCart} className="clearCartButton">
+                            <div>
+                                <p>Clear cart</p>
+                                <span>
+                                    <FaTrashAlt className="appShoppingCart" />
+                                </span>
+                            </div>
                         </button>    
                     </Link>
                     <button onClick={handleConfirmCart}>
-                        Confirm buy
-                    </button> 
+                        <div>
+                            <p>Confirm buy</p>
+                            <span>
+                                <FaCheck className="appShoppingCart" />
+                            </span>
+                        </div>
+                    </button>
+                    </div>
                 </div>
             )}
             

@@ -21,15 +21,16 @@ export function Summary() {
     
     return (
         <Container>
-            {categories.map((category) => (
-                <div key={category.id}>
-                    <span onClick={() => handleCategories(category.title)}>
-                    <strong>{category.title}</strong>
-                    </span>
-                    { isCurentCategory(category) && <button onClick={() => handleCategories('')}>X</button> }
-                    
-                </div>
-            ))}
+            <>
+                {categories.map((category) => (
+                    <div key={category.id}>
+                        { isCurentCategory(category) && <button onClick={() => handleCategories('')}>X</button> }
+                        <span onClick={() => handleCategories(category.title)}>
+                            <strong>{category.title}</strong>
+                        </span>
+                    </div>
+                ))}
+            </>
         </Container>
     );
 }

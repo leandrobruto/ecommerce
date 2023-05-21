@@ -2,7 +2,7 @@ import { useCart } from "../../hooks/useCart";
 
 import imgDefault from "../../assets/imgDefault.jpeg"
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface Product {
     id: number;
@@ -19,11 +19,13 @@ interface ProductInfoProps {
 export function ProductInfo({product}: ProductInfoProps) {
     const { addToCart } = useCart();
     const inputRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+    const navigate = useNavigate();
 
     function handleAddToCart() {
         addToCart({...product, 
             quantity: Number(inputRef.current.value),
         });
+        navigate("/shoppingcart");
     }
 
     return (
@@ -44,7 +46,9 @@ export function ProductInfo({product}: ProductInfoProps) {
             <h4>{product?.description}</h4>
             <h4>{product?.category}</h4>
             <input type="number" ref={inputRef} name="quantity" min="1"></input>
-            <button onClick={handleAddToCart}>Add to cart</button>
+            <div>
+                <button onClick={handleAddToCart}>Add to cart</button>
+            </div>
         </div>
     );
 }

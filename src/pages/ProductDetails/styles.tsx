@@ -17,7 +17,7 @@ export const Container = styled.div`
         header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
         }
 
         h4 {
@@ -39,6 +39,7 @@ export const Container = styled.div`
             padding: 0 0.5rem;
             height: 2rem;
             border-radius: 0.25rem;
+            margin-top: 1rem;
 
             border: 1px solid #d7d7d7;
             background: #e7e9ee;
@@ -55,22 +56,26 @@ export const Container = styled.div`
             }
         }
 
-        button {
-            width: 80%;
-            padding: 0 1rem;
-            height: 3rem;
-            background: var(--green);
-            color: #fff;
-            border-radius: 0.25rem;
-            border: 0;
-            font-size: 1rem;
-            margin-top: 1rem;
-            font-weight: 600;
+        div {
+            align-items: center;
+            justify-content: center;
 
-            transition: filter 0.2s;
+            button {
+                width: 80%;
+                padding: 0 1rem;
+                height: 3rem;
+                background: var(--green);
+                color: #fff;
+                border-radius: 0.25rem;
+                border: 0;
+                font-size: 1rem;
+                font-weight: 600;
 
-            &:hover {
-                filter: brightness(0.9);
+                transition: filter 0.2s;
+
+                &:hover {
+                    filter: brightness(0.9);
+                }
             }
         }
     } 
