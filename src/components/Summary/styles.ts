@@ -6,6 +6,7 @@ export const Container = styled.div`
     gap: 2rem;
 
     div {
+        cursor: pointer;
         background: var(--shape);
         padding: 1rem;
         border-radius: 0.25rem;
@@ -43,11 +44,6 @@ export const Container = styled.div`
             &:hover {
                 filter: brightness(0.9);
             }
-        }
-
-        &.highlight-background {
-            background: var(--green);
-            color: #fff;
         }
 
         transition: filter 0.2s;

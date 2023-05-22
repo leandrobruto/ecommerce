@@ -14,7 +14,7 @@ export function Sidebar() {
 
     return (
         <Container>
-            <div id="sidebar">
+            <div id="searchbar">
                 <div>
                     <form id="search-form" role="search" onSubmit={handleSearhProducts}>
                         <input
@@ -30,7 +30,6 @@ export function Sidebar() {
                     </form>
                 </div>
             </div>
-            <div id="detail"></div>
         </Container>
     );
 }

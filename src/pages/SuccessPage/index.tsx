@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { Container } from "./styles";
+import { FaArrowLeft } from 'react-icons/fa';
 
 export default function SuccessPage() {
   return (
@@ -9,6 +11,12 @@ export default function SuccessPage() {
         <p>
           ;D
         </p>
+      </div>
+      <div>
+      <button>
+        <Link to="/">Back to Home</Link>
+        <FaArrowLeft />
+      </button>
       </div>
     </Container>
   );

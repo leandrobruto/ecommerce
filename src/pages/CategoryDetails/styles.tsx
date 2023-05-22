@@ -9,6 +9,9 @@ export const Container = styled.div`
     gap: 2rem;
 
     a {
+        border-radius: 0.25rem;
+        color: var(--text-title);
+        text-decoration: none;
         transition: filter 0.2s;
 
         &:hover {
